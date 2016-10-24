@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -22,6 +21,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
@@ -43,7 +44,13 @@ group :development, :test do
   gem 'spring'
   
   #Paginate permits to display some pages among a lot
-  gem 'will_paginate', '~> 3.0.6'
-
+  
+  gem 'sqlite3'
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end 
+
+gem 'will_paginate', '~> 3.0.6'
